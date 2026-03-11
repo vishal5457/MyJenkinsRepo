@@ -39,16 +39,6 @@ sonar.jdbc.password=sonar
 sonar.jdbc.url=jdbc:postgresql://localhost:5432/sonarqube
 
 
-sudo adduser sonar
-sudo chown -R sonar:sonar /opt/sonarqube
-
-
-sudo nano /opt/sonarqube/conf/sonar.properties
-
-sonar.jdbc.username=sonar
-sonar.jdbc.password=sonar
-sonar.jdbc.url=jdbc:postgresql://localhost:5432/sonarqube
-
 sudo nano /etc/sysctl.conf
 
 vm.max_map_count=262144
