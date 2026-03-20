@@ -39,16 +39,6 @@ sonar.jdbc.password=sonar
 sonar.jdbc.url=jdbc:postgresql://localhost:5432/sonarqube
 
 
-sudo adduser sonar
-sudo chown -R sonar:sonar /opt/sonarqube
-
-
-sudo nano /opt/sonarqube/conf/sonar.properties
-
-sonar.jdbc.username=sonar
-sonar.jdbc.password=sonar
-sonar.jdbc.url=jdbc:postgresql://localhost:5432/sonarqube
-
 sudo nano /etc/sysctl.conf
 
 vm.max_map_count=262144
@@ -71,4 +61,20 @@ http://EC2-PUBLIC-IP:9000   # open port 9000
 
 username: admin
 password: admin
+
+mvn clean verify sonar:sonar \
+-Dsonar.projectKey=demo-project \
+-Dsonar.host.url=http://13.127.165.243:9000 \
+-Dsonar.login=sqa_e2caf7da4d24963db7e956b67063efec5fda00dc
+
+
+
+
+
+
+
+
+
+
+
 
